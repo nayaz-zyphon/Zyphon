@@ -189,19 +189,20 @@ const ContactUs = () => {
                                                         "Others"
                                                     ]
                                                     :
-                                                    [
-                                                        "Mac Mini",
-                                                        "iMac (Retina 5k, 27-inch) 2020",
-                                                        "Mac Mini M1 2020",
-                                                        "iMac (24-inch) M1 2021",
-                                                        "Mac Studio (M1 Max/Ultra) 2022",
-                                                        "Mac Mini (M2/Pro) 2023",
-                                                        "Mac Studio (M2 Max/Ultra) 2023",
-                                                        "Mac Pro (M2 Ultra) 2023",
-                                                        "iMac (24-inch, M3) 2023",
-                                                        "iMac (24-inch, M4) 2023",
-                                                        "Mac Studio (M4 Max/M3 Ultra) 2025",
-                                                    ]
+                                                    selectedDeviceType === "MacBook" ?
+                                                        [
+                                                            "Mac Mini",
+                                                            "iMac (Retina 5k, 27-inch) 2020",
+                                                            "Mac Mini M1 2020",
+                                                            "iMac (24-inch) M1 2021",
+                                                            "Mac Studio (M1 Max/Ultra) 2022",
+                                                            "Mac Mini (M2/Pro) 2023",
+                                                            "Mac Studio (M2 Max/Ultra) 2023",
+                                                            "Mac Pro (M2 Ultra) 2023",
+                                                            "iMac (24-inch, M3) 2023",
+                                                            "iMac (24-inch, M4) 2023",
+                                                            "Mac Studio (M4 Max/M3 Ultra) 2025",
+                                                        ] : []
                                 }
                             />
                         </div>
