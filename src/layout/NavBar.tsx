@@ -111,7 +111,7 @@ const NavBar = () => {
                         </button>
                         <div className="text-sm flex flex-col gap-0.5 justify-center">
                             <p className="text-[#D9D9D9]">Ask Questions?</p>
-                            <p className="text-white">+91 - 8970081700</p>
+                            <p className="text-white">+91 - 9148078233</p>
                         </div>
                     </div>
 

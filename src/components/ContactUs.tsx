@@ -18,6 +18,8 @@ const ContactUs = () => {
         setIsAgreed(event.target.checked);
     };
 
+    const [selectedDeviceType, setSelectedDeviceType] = useState("")
+
     return (
         <div id="contact" className="font-[Urbanist] bg-gradient-to-b from-[#30303547] text-white from-40% t-[#3030350A] sm:rounded-2xl xl:px-20 md:px-10 px-5 xl:py-16 sm:py-12 py-6 flex flex-col items-center sm:gap-14 gap-10 relative z-0 md:mb-16">
             <h2 className="font-['Space_Grotesk'] sm:text-5xl text-4xl font-medium text-white">
@@ -76,15 +78,131 @@ const ContactUs = () => {
                         <div className="flex sm:flex-row flex-col sm:gap-3 gap-1">
                             <DropDown
                                 value={deviceType}
-                                setValue={setDeviceType}
+                                setValue={(value) => {
+                                    setDeviceType(value);
+                                    setSelectedDeviceType(value)
+                                }}
                                 title='Device Type'
-                                options={["iPhone", "iPad", "MacBook"]}
+                                options={["iPhone", "iPad", "iWatch", "MacBook", "Mac"]}
                             />
                             <DropDown
                                 value={deviceBrand}
                                 setValue={setDeviceBrand}
                                 title='Device Brand'
-                                options={["iPhone", "iPad", "MacBook"]}
+                                options={
+                                    selectedDeviceType === "iPhone"
+                                        ? [
+                                            "iPhone X",
+                                            "iPhone XR",
+                                            "iPhone XS/XS Max",
+                                            "iPhone 11",
+                                            "iPhone 11 Pro/Pro Max",
+                                            "iPhone SE (2nd gen)",
+                                            "iPhone 12",
+                                            "iPhone 12 mini",
+                                            "iPhone 12 Pro/Pro Max",
+                                            "iPhone 13",
+                                            "iPhone 13 mini",
+                                            "iPhone 13 Pro/Pro Max",
+                                            "iPhone SE (3rd gen)",
+                                            "iPhone 14",
+                                            "iPhone 14 Plus",
+                                            "iPhone 14 Pro/Pro Max",
+                                            "iPhone 15",
+                                            "iPhone 15 Plus",
+                                            "iPhone 15 Pro/Pro Max",
+                                            "iPhone 16",
+                                            "iPhone 16 Plus",
+                                            "iPhone 16 Pro/Pro Max",
+                                            "iPhone 17",
+                                            "iPhone 17 Pro/Pro Max",
+                                            "iPhone Air",
+                                        ]
+                                        : selectedDeviceType === "iPad"
+                                            ? [
+                                                "iPad",
+                                                "iPad Mini",
+                                                "iPad Mini 2",
+                                                "iPad Mini 3",
+                                                "iPad Mini 4",
+                                                "iPad Mini 5th gen",
+                                                "iPad Mini 6th gen",
+                                                "iPad Mini 7th gen",
+                                                "iPad Air 1st gen",
+                                                "iPad Air 2nd gen",
+                                                "iPad Air 3rd gen",
+                                                "iPad Air 4th gen",
+                                                "iPad Air 5th gen",
+                                                "iPad Air 6th gen",
+                                                "iPad Air 7th gen",
+                                                "iPad Pro 1st gen",
+                                                "iPad Pro 2nd gen",
+                                                "iPad Pro 3rd gen",
+                                                "iPad Pro 4th gen",
+                                                "iPad Pro 5th gen",
+                                                "iPad Pro 6th gen",
+                                                "iPad Pro 7th gen",
+                                                "Others"
+                                            ]
+                                            :
+                                            selectedDeviceType === "iWatch"
+                                                ?
+                                                [
+                                                    "iWatch Series 1",
+                                                    "iWatch Series 2",
+                                                    "iWatch Series 3",
+                                                    "iWatch Series 4",
+                                                    "iWatch Series 5",
+                                                    "iWatch Series 6",
+                                                    "iWatch Series 7",
+                                                    "iWatch Series 8",
+                                                    "iWatch Series 9",
+                                                    "iWatch Series 10",
+                                                    "iWatch Ultra 1",
+                                                    "iWatch Ultra 2",
+                                                    "iWatch SE (1st gen)",
+                                                    "iWatch SE (2nd gen)",
+                                                    "iWatch SE (3rd gen)",
+                                                    "Others"
+                                                ]
+                                                :
+                                                selectedDeviceType === "MacBook"
+                                                    ?
+                                                    [
+                                                        "MacBook Pro 2010",
+                                                        "MacBook Pro Retina 2012",
+                                                        "MacBook Retina (12-inch) 2015",
+                                                        "MacBook Pro with touchbar 2016",
+                                                        "MacBook Air Retina 2018",
+                                                        "MacBook Pro (16-inch) 2019",
+                                                        "MacBook Air M1 2020",
+                                                        "MacBook Pro M1 (13-inch) 2020",
+                                                        "MacBook Pro 14/16-inch M1 Pro/Max (2021)",
+                                                        "MacBook Pro 13-inch M2 (2022)",
+                                                        "MacBook Air M2 (2022)",
+                                                        "MacBook Pro 14/16-inch M2 Pro/Max",
+                                                        "MacBook Air 15-inch M2 (2023)",
+                                                        "MacBook Pro 14/16-inch M3 (2023)",
+                                                        "MacBook Air 13/15-inch M3 (2024)",
+                                                        "MacBook Pro 14/16-inch M4 Pro/Max (2024)",
+                                                        "MacBook Air 13/15-inch M4 (2025)",
+                                                        "Others"
+                                                    ]
+                                                    :
+                                                    [
+                                                        "Mac Mini",
+                                                        "iMac (Retina 5k, 27-inch) 2020",
+                                                        "Mac Mini M1 2020",
+                                                        "iMac (24-inch) M1 2021",
+                                                        "Mac Studio (M1 Max/Ultra) 2022",
+                                                        "Mac Mini (M2/Pro) 2023",
+                                                        "Mac Studio (M2 Max/Ultra) 2023",
+                                                        "Mac Pro (M2 Ultra) 2023",
+                                                        "iMac (24-inch, M3) 2023",
+                                                        "iMac (24-inch, M4) 2023",
+                                                        "Mac Studio (M4 Max/M3 Ultra) 2025",
+                                                    ]
+                                }
                             />
                         </div>
 
@@ -168,6 +286,7 @@ const DropDown = ({ title, value, setValue, options }: { title: string; value: s
                 onChange={(e) => setValue(e.target.value)}
                 className='border border-gray-600 rounded-xl w-full p-3 text-sm bg-transparent focus:outline-0 appearance-none'
             >
+                <option value="" disabled className="bg-black">Select {title}</option>
                 {options.map((op) => (
                     <option key={op} value={op} className="bg-black">{op}</option>
                 ))}
