@@ -13,7 +13,7 @@ const About = () => {
         <div id="about" className='sm:mt-0 mt-4'>
             <div className="font-[Urbanist] bg-gradient-to-b from-[#30303547] from-40% t-[#3030350A] xl:px-24 md:px-10 px-5 xl:py-16 sm:py-12 py-6 flex flex-col md:gap-20 gap-10 items-center relative z-0 sm:rounded-2xl">
                 <h2 className="font-['Space_Grotesk'] sm:text-5xl text-4xl font-medium bg-gradient-to-r from-[#E60283] via-[#F1D507] to-[#DA4A02] bg-clip-text text-transparent">
-                    About zyphon
+                    About Zyphon
                 </h2>
 
                 <div className="flex md:flex-row flex-col items-center xl:gap-10 gap-6 xl:px-16">
