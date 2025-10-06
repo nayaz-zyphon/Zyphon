@@ -42,7 +42,9 @@ const Footer = () => {
             <div className="lg:w-[80%] w-full mx-auto lg:py-20 sm:py-14 py-8 lg:px-0 sm:px-10 px-5 flex md:flex-row flex-col gap-10 justify-between">
                 <div className='space-y-4 md:sm: w-fit'>
                     <img src={logo} alt="ZyPhone" />
-                    <p className='sm:text-base text-sm text-gray-200'>Optix seamlessly connects your members with the community, resources.</p>
+                    <p className='sm:text-base text-sm text-gray-200'>
+                        Bengaluru’s #1 Apple Device Repair Center
+                    </p>
 
                     <h3 className='font-medium'>Follow Us: </h3>
                     <div className="flex items-center gap-1.5">
@@ -82,7 +84,7 @@ const Footer = () => {
                         <div className='flex flex-row gap-1 items-start text-sm'>
                             <SlLocationPin className='translate-y-1 flex-none' />
                             <p className='flex-1'>
-                                D-1001, Aakruti Amity Apartments Anatha Nagar Layout, Kammasandra Bangalore, 560100
+                                No. S3 Ground Floor, Madhuban Apartment, Hosur main road, next to IFB point, near Koramangala Forum Mall, Bengaluru - 560030
                             </p>
                         </div>
 
@@ -90,14 +92,21 @@ const Footer = () => {
                             <IoCallOutline className='translate-y-1 flex-none' />
 
                             <div className='space-y-1 flex-1'>
-                                <p className='underline'>+91 91480 78233</p>
-                                <p className='underline'>+91 91480 78233</p>
+                                <p className='underline'>
+                                    <a href="tel:+919148078233">
+                                        +91 9148078233
+                                    </a>
+                                </p>
                             </div>
                         </div>
                         <div className='flex flex-row gap-1 items-start text-sm'>
                             <HiOutlineMail className='translate-y-1 flex-none' />
 
-                            <p className='underline flex-1'>Nayaz377@gmail.com</p>
+                            <p className='underline flex-1'>
+                                <a href="mailto:support@zyphon.in">
+                                    support@zyphon.in
+                                </a>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -143,7 +152,6 @@ const footerLinks = [
         heading: "Company",
         links: [
             { "About Us": "/" },
-            { "Careers": "/" },
             { "Warrenty": "/" },
             { "Privacy Policy": "/" },
             { "Terms and Services": "/" },

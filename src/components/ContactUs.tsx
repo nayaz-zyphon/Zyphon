@@ -40,9 +40,9 @@ const ContactUs = () => {
                     </p>
 
                     <div className="grid lg:grid-cols-2 grid-cols-1 lg:gap-8 gap-4 sm:mt-10 mt-6">
-                        <ContactWays heading='Phone' icon={<IoCallOutline className="text-xl" />} value={['+91 91480 78233', '+71 (800) 657-8963']} />
-                        <ContactWays heading='Email' icon={<HiOutlineMail className="text-xl" />} value={['Nayaz377@gmail.com', 'info@gmail.com']} />
-                        <ContactWays heading='Our Locations' icon={<SlLocationPin className="text-xl" />} value={['D-1001, Aakruti Amity Apartments Anatha Nagar Layout, Kammasandra Bangalore, 560100', '(Take lift from CSA block ground floor to 10th floor)']} />
+                        <ContactWays heading='Phone' icon={<IoCallOutline className="text-xl" />} value={['+919148078233']} />
+                        <ContactWays heading='Email' icon={<HiOutlineMail className="text-xl" />} value={['nayaz@zyphon.in']} />
+                        <ContactWays heading='Our Locations' icon={<SlLocationPin className="text-xl" />} value={['                                No. S3 Ground Floor, Madhuban Apartment, Hosur main road, next to IFB point, near Koramangala Forum Mall, Bengaluru - 560030']} />
                         <ContactWays heading='Opening Hours' icon={<LuClock4 className="text-xl" />} value={['Mon-Sat: 9AM-8PM', 'Sunday: 10AM-6PM']} />
                     </div>
                 </div>
@@ -83,7 +83,7 @@ const ContactUs = () => {
                                     setSelectedDeviceType(value)
                                 }}
                                 title='Device Type'
-                                options={["iPhone", "iPad", "iWatch", "MacBook", "Mac"]}
+                                options={["iPhone", "iPad", "iWatch", "MacBook/Mac"]}
                             />
                             <DropDown
                                 value={deviceBrand}
@@ -166,7 +166,7 @@ const ContactUs = () => {
                                                     "Others"
                                                 ]
                                                 :
-                                                selectedDeviceType === "MacBook"
+                                                selectedDeviceType === "MacBook/Mac"
                                                     ?
                                                     [
                                                         "MacBook Pro 2010",
@@ -186,23 +186,21 @@ const ContactUs = () => {
                                                         "MacBook Air 13/15-inch M3 (2024)",
                                                         "MacBook Pro 14/16-inch M4 Pro/Max (2024)",
                                                         "MacBook Air 13/15-inch M4 (2025)",
+                                                        "Mac Mini",
+                                                        "iMac (Retina 5k, 27-inch) 2020",
+                                                        "Mac Mini M1 2020",
+                                                        "iMac (24-inch) M1 2021",
+                                                        "Mac Studio (M1 Max/Ultra) 2022",
+                                                        "Mac Mini (M2/Pro) 2023",
+                                                        "Mac Studio (M2 Max/Ultra) 2023",
+                                                        "Mac Pro (M2 Ultra) 2023",
+                                                        "iMac (24-inch, M3) 2023",
+                                                        "iMac (24-inch, M4) 2023",
+                                                        "Mac Studio (M4 Max/M3 Ultra) 2025",
                                                         "Others"
                                                     ]
                                                     :
-                                                    selectedDeviceType === "MacBook" ?
-                                                        [
-                                                            "Mac Mini",
-                                                            "iMac (Retina 5k, 27-inch) 2020",
-                                                            "Mac Mini M1 2020",
-                                                            "iMac (24-inch) M1 2021",
-                                                            "Mac Studio (M1 Max/Ultra) 2022",
-                                                            "Mac Mini (M2/Pro) 2023",
-                                                            "Mac Studio (M2 Max/Ultra) 2023",
-                                                            "Mac Pro (M2 Ultra) 2023",
-                                                            "iMac (24-inch, M3) 2023",
-                                                            "iMac (24-inch, M4) 2023",
-                                                            "Mac Studio (M4 Max/M3 Ultra) 2025",
-                                                        ] : []
+                                                    []
                                 }
                             />
                         </div>
@@ -256,7 +254,17 @@ const ContactWays = ({ icon, heading, value }: { icon: JSX.Element; heading: str
             <div className="sm:text-sm text-xs text-white space-y-1">
                 <p>{heading}</p>
                 {value.map((val) => (
-                    <p key={val}>{val}</p>
+                    <p key={val}>
+                        {heading === "Email" || heading == "Phone" ?
+                            <a href={heading === "Email" ? `mailto:${val}` : heading === "Phone" ? `tel:${val}` : ""} >
+                                {val}
+                            </a>
+                            :
+                            <span>
+                                {val}
+                            </span>
+                        }
+                    </p>
                 ))}
             </div>
         </div>
@@ -287,7 +295,7 @@ const DropDown = ({ title, value, setValue, options }: { title: string; value: s
                 onChange={(e) => setValue(e.target.value)}
                 className='border border-gray-600 rounded-xl w-full p-3 text-sm bg-transparent focus:outline-0 appearance-none'
             >
-                <option value="" disabled className="bg-black">Select {title}</option>
+                <option value="" disabled className="bg-black text-white">Select {title}</option>
                 {options.map((op) => (
                     <option key={op} value={op} className="bg-black">{op}</option>
                 ))}

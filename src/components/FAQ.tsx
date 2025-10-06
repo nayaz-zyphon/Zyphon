@@ -72,14 +72,14 @@ const StillHaveQuestion = () => {
         </p>
 
         <div className="flex flex-row sm:flex-nowrap flex-wrap mt-4 gap-2 justify-center">
-          <button className="group text-sm flex sm:w-fit w-full items-center justify-center gap-2 px-6 py-3 rounded-full cursor-pointer bg-gradient-to-r from-[#37D569] to-[#00B34E] text-white font-medium hover:opacity-90 transition">
+          <a href="https://wa.me/919148078233" target="blank" className="group text-sm flex sm:w-fit w-full items-center justify-center gap-2 px-6 py-3 rounded-full cursor-pointer bg-gradient-to-r from-[#37D569] to-[#00B34E] text-white font-medium hover:opacity-90 transition">
             WhatsApp Support
             <FiArrowUpRight className="transform transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-          </button>
-          <button className="group text-sm flex sm:w-fit w-full items-center justify-center gap-2 px-6 py-3 rounded-full cursor-pointer bg-gradient-to-r from-[#E60283] to-[#DA4A02] text-white font-medium hover:opacity-90 transition">
+          </a>
+          <a href="tel:+919148078233" className="group text-sm flex sm:w-fit w-full items-center justify-center gap-2 px-6 py-3 rounded-full cursor-pointer bg-gradient-to-r from-[#E60283] to-[#DA4A02] text-white font-medium hover:opacity-90 transition">
             Talk to Our Suport
             <FiArrowUpRight className="transform transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-          </button>
+          </a>
         </div>
       </div>
     </Gradientbg>

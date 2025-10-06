@@ -21,7 +21,7 @@ const WhyChooseUs = () => {
                 </p>
 
                 <div className="grid lg:grid-cols-2 grid-cols-1 lg:gap-4 gap-0 font-[Manrope]">
-                    {["Same-day Service", "Genuine Parts", "12-Month Warrenty", "Transparent Pricing", "Free Doorstep Pickup & Delivery"].map((tag) => (
+                    {["Same-day Service", "Genuine Parts", "12-Month Warranty", "Transparent Pricing", "Free Doorstep Pickup & Delivery"].map((tag) => (
                         <p key={tag} className="flex flex-row items-center gap-2 sm:text-base text-sm">
                             <GoDotFill className="sm:text-2xl text-xl" />
                             {tag}
@@ -36,7 +36,11 @@ const WhyChooseUs = () => {
 
                     <div className="text-sm flex flex-col gap-0.5 justify-center">
                         <p className="text-[#D9D9D9]">Need any help?</p>
-                        <p className="text-white">+91 - 8970081700</p>
+                        <p className="text-white">
+                            <a href="tel:+919148078233">
+                                +91 - 9148078233
+                            </a>
+                        </p>
                     </div>
                 </div>
             </div>
