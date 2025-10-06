@@ -1,0 +1,87 @@
+/* Important */
+@import "tailwindcss"; 
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slideDown {
+  animation: slideDown 0.3s ease-out;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+@keyframes moveLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes moveRight {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+.animate-to-left {
+  display: flex;
+  animation: moveLeft 40s linear infinite;
+  width: max-content;
+}
+
+.animate-to-right {
+  display: flex;
+  animation: moveRight 40s linear infinite;
+  width: max-content;
+}
+
+
+.custom-checkbox {
+  appearance: none;
+  cursor: pointer;
+  width: 1rem;
+  height: 1rem;
+  border: 1px solid #c4c4c4;
+  /* border-gray-500 */
+  border-radius: 0.25rem;
+  /* Adjust if you want rounder corners */
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  /* Ensures the background is white */
+}
+
+.custom-checkbox:checked::before {
+  content: '';
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  background-color: transparent;
+  /* bg-primary-blue */
+  border-radius: 0.25rem;
+  /* Adjust if you want rounder corners */
+  border: 1px solid #ffffff;
+}
+
+.custom-checkbox:checked::after {
+  content: '';
+  position: absolute;
+  width: 0.25rem;
+  height: 0.5rem;
+  border: solid #ffffff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  left: 0.35rem;
+  top: 0.2rem;
+}
