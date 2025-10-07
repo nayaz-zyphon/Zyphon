@@ -14,6 +14,7 @@ const ContactUs = () => {
     const [deviceBrand, setDeviceBrand] = useState("");
     const [isAgreed, setIsAgreed] = useState(false);
     const [preferredService, setPreferredService] = useState("");
+    const [loading, setLoading] = useState(false);
 
     const handleCheckboxChange = (event: any) => {
         setIsAgreed(event.target.checked);
@@ -25,6 +26,39 @@ const ContactUs = () => {
         "Doorstep Service (Free pickup & delivery)",
         "Visit Service Center",
     ];
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setLoading(true);
+
+        try {
+            const response = await fetch(
+                "https://cloud.activepieces.com/api/v1/webhooks/trgAte5BA5ys7IoMOLeow/test",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        fullName,
+                        email,
+                        phoneNum,
+                        deviceType,
+                        deviceBrand,
+                        preferredService,
+                    }),
+                }
+            );
+
+            if (!response.ok) throw new Error("Network response was not ok");
+
+            console.log("Form submitted successfully!");
+        } catch (error) {
+            console.error("Error submitting form:", error);
+        } finally {
+            setLoading(false);
+        }
+    };
 
     return (
         <div id="contact" className="font-[Urbanist] bg-gradient-to-b from-[#30303547] text-white from-40% t-[#3030350A] sm:rounded-2xl xl:px-20 md:px-10 px-5 xl:py-16 sm:py-12 py-6 flex flex-col items-center sm:gap-14 gap-10 relative z-0 md:mb-16">
@@ -256,8 +290,12 @@ const ContactUs = () => {
                             </p>
                         </div>
 
-                        <button className="w-full bg-[#EF644C50] py-4 sm:mt-10 mt-4 rounded-2xl cursor-pointer hover:bg-[#EF644C90] transition-colors">
-                            Submit
+                        <button
+                            onClick={handleSubmit}
+                            disabled={!isAgreed}
+                            className={`${isAgreed ? "cursor-pointer hover:bg-[#EF644C90] transition-colors" : "cursor-default"}` + " w-full bg-[#EF644C50] py-4 sm:mt-10 mt-4 rounded-2xl"}
+                        >
+                            {loading ? "Submitting..." : "Submit"}
                         </button>
                     </div>
                 </div>
