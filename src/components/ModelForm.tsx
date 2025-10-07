@@ -7,6 +7,8 @@ const ModelForm = ({ formFor, defaultDeviceBrand }: { formFor: string; defaultDe
     const [phoneNum, setPhoneNum] = useState("");
     const [deviceType, setDeviceType] = useState("");
     const [deviceBrand, setDeviceBrand] = useState("");
+    const [message, setMessage] = useState("");
+
     const [isAgreed, setIsAgreed] = useState(false);
     const [preferredService, setPreferredService] = useState("");
     const [loading, setLoading] = useState(false);
@@ -42,6 +44,7 @@ const ModelForm = ({ formFor, defaultDeviceBrand }: { formFor: string; defaultDe
                         phoneNum,
                         deviceType,
                         deviceBrand,
+                        message,
                         preferredService,
                     }),
                 }
@@ -70,6 +73,7 @@ const ModelForm = ({ formFor, defaultDeviceBrand }: { formFor: string; defaultDe
             setPhoneNum("");
             setDeviceType("");
             setDeviceBrand("");
+            setMessage("");
             setPreferredService("");
         }
     };
@@ -232,6 +236,8 @@ const ModelForm = ({ formFor, defaultDeviceBrand }: { formFor: string; defaultDe
                 name="issue description"
                 id="issue description"
                 placeholder="Message..."
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
                 className='border border-gray-600 rounded-xl w-full p-3 min-h-28 text-sm bg-transparent focus:outline-0 resize-none'
             />
 
@@ -247,7 +253,7 @@ const ModelForm = ({ formFor, defaultDeviceBrand }: { formFor: string; defaultDe
                     >
                         <input
                             type="radio"
-                            name="preferredService"
+                            name={formFor === "Contact Us" ? "contact us" : "preferredService"}
                             value={option}
                             checked={preferredService === option}
                             onChange={() => setPreferredService(option)}
@@ -275,7 +281,7 @@ const ModelForm = ({ formFor, defaultDeviceBrand }: { formFor: string; defaultDe
             <button
                 disabled={!isAgreed}
                 onClick={handleSubmit}
-                className={`${isAgreed ? "cursor-pointer hover:bg-[#EF644C90] transition-colors" : "cursor-default"} +" w-full bg-[#EF644C50] py-2 sm:mt-6 mt-4 rounded-lg cursor-pointer hover:bg-[#EF644C90] transition-colors"`} >
+                className={`${isAgreed ? "cursor-pointer hover:bg-[#EF644C90] transition-colors" : "cursor-default"} +" w-full bg-[#EF644C50] py-2 sm:mt-6 mt-4 rounded-lg`} >
                 {loading ? "Submitting..." : "Submit"}
             </button>
         </div >
