@@ -192,7 +192,7 @@ const ModelForm = ({ formFor, defaultDeviceBrand }: { formFor: string; defaultDe
                 {options.map((option) => (
                     <label
                         key={option}
-                        className={`flex items-center gap-3 p-3 rounded-xl cursor-pointer transition-all duration-300 border ${preferredService === option ? "border-[#EF644C] bg-[#111]" : "border-gray-700 bg-[#0a0a0a] hover:border-gray-600"}`}
+                        className={`flex items-center gap-3 p-2.5 rounded-xl cursor-pointer transition-all duration-300 border ${preferredService === option ? "border-[#EF644C] bg-[#111]" : "border-gray-700 bg-[#0a0a0a] hover:border-gray-600"}`}
                     >
                         <input
                             type="radio"

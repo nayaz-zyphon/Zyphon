@@ -255,7 +255,7 @@ const ContactUs = () => {
                             </p>
                         </div>
 
-                        <button className="w-full bg-[#EF644C50] py-4 sm:mt-10 mt-4 rounded-2xl">
+                        <button className="w-full bg-[#EF644C50] py-4 sm:mt-10 mt-4 rounded-2xl cursor-pointer hover:bg-[#EF644C90] transition-colors">
                             Submit
                         </button>
                     </div>
