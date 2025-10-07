@@ -53,10 +53,27 @@ const ContactUs = () => {
             if (!response.ok) throw new Error("Network response was not ok");
 
             console.log("Form submitted successfully!");
+
+            // Trigger Google Ads conversion here
+            if (typeof window !== "undefined" && (window as any).gtag) {
+                (window as any).gtag("event", "conversion", {
+                    send_to: "AW-17631803811/sReaCIfD3agbEKPzv9dB",
+                    value: 1.0,
+                    currency: "INR",
+                });
+
+                console.log("Google Ads Testing");
+            }
         } catch (error) {
             console.error("Error submitting form:", error);
         } finally {
             setLoading(false);
+            setFullName("");
+            setEmail("");
+            setPhoneNum("");
+            setDeviceType("");
+            setDeviceBrand("");
+            setPreferredService("");
         }
     };
 
