@@ -218,20 +218,6 @@ const ContactUs = () => {
                             className='border border-gray-600 rounded-xl w-full p-3 min-h-28 text-sm bg-transparent focus:outline-0 resize-none'
                         />
 
-                        <div className="flex flex-row items-center gap-3">
-                            <input
-                                type="checkbox"
-                                name="agreement"
-                                checked={isAgreed}
-                                onChange={handleCheckboxChange}
-                                className="custom-checkbox"
-                            />
-
-                            <p className="text-sm text-gray-400 flex-1">
-                                Appointment is confirmed after we receive your service request.
-                            </p>
-                        </div>
-
                         <div className="flex flex-col gap-3">
                             <label className="text-sm text-gray-400">
                                 Preferred Service <span className="text-red-500">*</span>
@@ -240,7 +226,7 @@ const ContactUs = () => {
                             {options.map((option) => (
                                 <label
                                     key={option}
-                                    className={`flex items-center gap-3 p-3 rounded-xl cursor-pointer transition-all duration-300 border ${preferredService === option ? "border-[#EF644C] bg-[#111]" : "border-gray-700 bg-[#0a0a0a] hover:border-gray-600"}`}
+                                    className={`flex items-center gap-3 p-2.5 rounded-xl cursor-pointer transition-all duration-300 border ${preferredService === option ? "border-[#EF644C] bg-[#111]" : "border-gray-700 bg-[#0a0a0a] hover:border-gray-600"}`}
                                 >
                                     <input
                                         type="radio"
@@ -253,6 +239,20 @@ const ContactUs = () => {
                                     <span className="text-sm md:text-base">{option}</span>
                                 </label>
                             ))}
+                        </div>
+
+                        <div className="flex flex-row items-center gap-3">
+                            <input
+                                type="checkbox"
+                                name="agreement"
+                                checked={isAgreed}
+                                onChange={handleCheckboxChange}
+                                className="custom-checkbox"
+                            />
+
+                            <p className="text-sm text-gray-400 flex-1">
+                                Appointment is confirmed after we receive your service request.
+                            </p>
                         </div>
 
                         <button className="w-full bg-[#EF644C50] py-4 sm:mt-10 mt-4 rounded-2xl">
