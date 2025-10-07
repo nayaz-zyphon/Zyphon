@@ -16,7 +16,7 @@ const Home = () => {
         <>
             <div
                 id="home"
-                className="font-[Urbanist] text-white overflow-x-hidden bg-gradient-to-r from-[#0C0C0C] from-60% to-black sm:rounded-2xl p-4 pb-0 w-full z-0 relative sm:-translate-y-38 -translate-y-36"
+                className="font-[Urbanist] text-white overflow-x-hidden bg-gradient-to-r from-[#0C0C0C] from-60% to-black sm:rounded-2xl p-4 pb-0 w-full z-0 relative lg:-translate-y-34 sm:-translate-y-40 -translate-y-36"
             >
                 <div className="flex flex-row xl:gap-6 gap-4 items-center h-screen pt-20 xl:px-20 lg:px-0 md:px-10 p-0">
                     <img src={Phones} alt="Iphones" className="lg:block hidden h-full w-2/5 pointer-events-none select-none" />
