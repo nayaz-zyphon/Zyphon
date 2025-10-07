@@ -13,12 +13,18 @@ const ContactUs = () => {
     const [deviceType, setDeviceType] = useState("");
     const [deviceBrand, setDeviceBrand] = useState("");
     const [isAgreed, setIsAgreed] = useState(false);
+    const [preferredService, setPreferredService] = useState("");
 
     const handleCheckboxChange = (event: any) => {
         setIsAgreed(event.target.checked);
     };
 
     const [selectedDeviceType, setSelectedDeviceType] = useState("")
+
+    const options = [
+        "Doorstep Service (Free pickup & delivery)",
+        "Visit Service Center",
+    ];
 
     return (
         <div id="contact" className="font-[Urbanist] bg-gradient-to-b from-[#30303547] text-white from-40% t-[#3030350A] sm:rounded-2xl xl:px-20 md:px-10 px-5 xl:py-16 sm:py-12 py-6 flex flex-col items-center sm:gap-14 gap-10 relative z-0 md:mb-16">
@@ -224,6 +230,29 @@ const ContactUs = () => {
                             <p className="text-sm text-gray-400 flex-1">
                                 Appointment is confirmed after we receive your service request.
                             </p>
+                        </div>
+
+                        <div className="flex flex-col gap-3">
+                            <label className="text-sm text-gray-400">
+                                Preferred Service <span className="text-red-500">*</span>
+                            </label>
+
+                            {options.map((option) => (
+                                <label
+                                    key={option}
+                                    className={`flex items-center gap-3 p-3 rounded-xl cursor-pointer transition-all duration-300 border ${preferredService === option ? "border-[#EF644C] bg-[#111]" : "border-gray-700 bg-[#0a0a0a] hover:border-gray-600"}`}
+                                >
+                                    <input
+                                        type="radio"
+                                        name="preferredService"
+                                        value={option}
+                                        checked={preferredService === option}
+                                        onChange={() => setPreferredService(option)}
+                                        className="custom-radio cursor-pointer w-5 h-5"
+                                    />
+                                    <span className="text-sm md:text-base">{option}</span>
+                                </label>
+                            ))}
                         </div>
 
                         <button className="w-full bg-[#EF644C50] py-4 sm:mt-10 mt-4 rounded-2xl">

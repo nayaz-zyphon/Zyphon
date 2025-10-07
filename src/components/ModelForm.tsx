@@ -8,6 +8,7 @@ const ModelForm = ({ formFor, defaultDeviceBrand }: { formFor: string; defaultDe
     const [deviceType, setDeviceType] = useState("");
     const [deviceBrand, setDeviceBrand] = useState("");
     const [isAgreed, setIsAgreed] = useState(false);
+    const [preferredService, setPreferredService] = useState("");
 
     const handleCheckboxChange = (event: any) => {
         setIsAgreed(event.target.checked);
@@ -16,6 +17,11 @@ const ModelForm = ({ formFor, defaultDeviceBrand }: { formFor: string; defaultDe
     const [selectedDeviceBrand, setSelectedDeviceBrand] = useState<"iPhone" | "iPad" | "iWatch" | "MacBook/Mac" | "">(defaultDeviceBrand === "" ? defaultDeviceBrand : "")
 
     console.log(formFor);
+
+    const options = [
+        "Doorstep Service (Free pickup & delivery)",
+        "Visit Service Center",
+    ];
 
     return (
         <div className="w-full space-y-3">
@@ -178,6 +184,29 @@ const ModelForm = ({ formFor, defaultDeviceBrand }: { formFor: string; defaultDe
                 className='border border-gray-600 rounded-xl w-full p-3 min-h-28 text-sm bg-transparent focus:outline-0 resize-none'
             />
 
+            <div className="flex flex-col gap-3">
+                <label className="text-sm text-gray-400">
+                    Preferred Service <span className="text-red-500">*</span>
+                </label>
+
+                {options.map((option) => (
+                    <label
+                        key={option}
+                        className={`flex items-center gap-3 p-3 rounded-xl cursor-pointer transition-all duration-300 border ${preferredService === option ? "border-[#EF644C] bg-[#111]" : "border-gray-700 bg-[#0a0a0a] hover:border-gray-600"}`}
+                    >
+                        <input
+                            type="radio"
+                            name="preferredService"
+                            value={option}
+                            checked={preferredService === option}
+                            onChange={() => setPreferredService(option)}
+                            className="custom-radio cursor-pointer w-5 h-5"
+                        />
+                        <span className="text-sm md:text-base">{option}</span>
+                    </label>
+                ))}
+            </div>
+
             <div className="flex flex-row items-center gap-3">
                 <input
                     type="checkbox"
@@ -192,7 +221,7 @@ const ModelForm = ({ formFor, defaultDeviceBrand }: { formFor: string; defaultDe
                 </p>
             </div>
 
-            <button className="w-full bg-[#EF644C50] py-4 sm:mt-6 mt-4 rounded-2xl">
+            <button className="w-full bg-[#EF644C50] py-2 sm:mt-6 mt-4 rounded-lg cursor-pointer hover:bg-[#EF644C90] transition-colors">
                 Submit
             </button>
         </div>

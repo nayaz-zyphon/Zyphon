@@ -83,7 +83,7 @@ const RepairServices = (
                 const { title, services, image } = card;
                 return (
                     <Gradientbg key={index}>
-                        <div className="flex-1 flex flex-col gap-4 h-full p-4 sm:rounded-3xl rounded-2xl bg-gradient-to-r from-[#181414] from-40% to-[#141313]">
+                        <div className="flex-1 flex flex-col gap-4 h-full p-4 sm:rounded-3xl rounded-2xl bg-gradient-to-r from-[#181414] from-40% to-[#141313] z-30">
                             <img src={image} className='w-full xl:h-fit md:h-80 h-48 rounded-2xl pointer-events-none select-none object-cover' />
 
                             <div className="space-y-1">

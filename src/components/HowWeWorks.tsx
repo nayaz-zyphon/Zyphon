@@ -5,7 +5,7 @@ const HowWeWorks = () => {
     const [opened, setOpened] = useState("02"); // Start with the first step open
 
     return (
-        <div className='w-full text-white flex flex-col gap-4 xl:py-10 sm:pb-5 items-center relative lg:-translate-y-0 md:-translate-y-16 -translate-y-0'>
+        <div className='w-full text-white flex flex-col gap-4 xl:py-10 sm:pb-5 items-center relative lg:-translate-y-0 md:-translate-y-16 -translate-y-0 z-0'>
             <XPaddinText>
                 how we work
             </XPaddinText>
@@ -54,7 +54,7 @@ const HowWeWorks = () => {
             </div>
 
             <>
-                <svg className="absolute right-0 -top-1/2 z-0 md:translate-x-4" width="500" height="1222" viewBox="0 0 631 1222" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg className="absolute right-0 xl:-top-1/2 -top-20 -z-50 md:translate-x-4" width="500" height="1222" viewBox="0 0 631 1222" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g filter="url(#filter0_f_235_1896)">
                         <circle cx="611" cy="611" r="157" fill="#C25340" floodOpacity="0.9" />
                     </g>
