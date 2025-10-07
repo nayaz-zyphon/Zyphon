@@ -243,7 +243,7 @@ const ContactUs = () => {
 };
 
 
-const ContactWays = ({ icon, heading, value }: { icon: JSX.Element; heading: string; value: string[] }) => {
+export const ContactWays = ({ icon, heading, value }: { icon: JSX.Element; heading: string; value: string[] }) => {
 
     return (
         <div className="flex gap-3 items-start">
@@ -271,7 +271,7 @@ const ContactWays = ({ icon, heading, value }: { icon: JSX.Element; heading: str
     )
 };
 
-const Input = ({ title, type, value, setValue }: { title: string; type: "text" | "number" | "email"; value: string; setValue: (value: string) => void; }) => {
+export const Input = ({ title, type, value, setValue }: { title: string; type: "text" | "number" | "email"; value: string; setValue: (value: string) => void; }) => {
     return (
         <div className='space-y-2 flex-1'>
             <input
@@ -285,7 +285,7 @@ const Input = ({ title, type, value, setValue }: { title: string; type: "text" |
     )
 };
 
-const DropDown = ({ title, value, setValue, options }: { title: string; value: string; setValue: (value: string) => void; options: string[]; }) => {
+export const DropDown = ({ title, value, setValue, options }: { title: string; value: string; setValue: (value: string) => void; options: string[]; }) => {
     return (
         <div className='space-y-2 flex-1 flex items-center relative'>
             <select
