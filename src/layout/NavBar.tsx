@@ -200,6 +200,19 @@ const NavBar = () => {
 };
 
 const TextMoving = ({ bgColor, textColor, rotateAngle, translateY, animateClass }: { bgColor: string; textColor: string; rotateAngle: string; translateY: string; animateClass: string }) => {
+    const Text = () => {
+        return (
+            <div className="flex sm:gap-10 gap-8">
+                <p>
+                    Doorstep Service/ Free Pickup and Drop
+                </p>
+                <p>
+                    Call Now: +91 - 91480 78233
+                </p>
+            </div>
+        )
+    }
+
     return (
         <div
             style={{
@@ -208,54 +221,12 @@ const TextMoving = ({ bgColor, textColor, rotateAngle, translateY, animateClass 
             }}
             className={"font-['Space_Grotesk'] md:text-lg text-xs font-medium flex sm:gap-10 gap-4 py-2 overflow-x-visible select-none " + `${translateY} ${rotateAngle} ${animateClass}`}
         >
-            <div className="flex sm:gap-10 gap-8">
-                <p>
-                    Doorstep Pickup & Delivery
-                </p>
-                <p>
-                    Call Now: +91 - 91480 78233
-                </p>
-            </div>
-            <div className="flex sm:gap-10 gap-8">
-                <p>
-                    Doorstep Pickup & Delivery
-                </p>
-                <p>
-                    Call Now: +91 - 91480 78233
-                </p>
-            </div>
-            <div className="flex sm:gap-10 gap-8">
-                <p>
-                    Doorstep Pickup & Delivery
-                </p>
-                <p>
-                    Call Now: +91 - 91480 78233
-                </p>
-            </div>
-            <div className="flex sm:gap-10 gap-8">
-                <p>
-                    Doorstep Pickup & Delivery
-                </p>
-                <p>
-                    Call Now: +91 - 91480 78233
-                </p>
-            </div>
-            <div className="flex sm:gap-10 gap-8">
-                <p>
-                    Doorstep Pickup & Delivery
-                </p>
-                <p>
-                    Call Now: +91 - 91480 78233
-                </p>
-            </div>
-            <div className="flex sm:gap-10 gap-8">
-                <p>
-                    Doorstep Pickup & Delivery
-                </p>
-                <p>
-                    Call Now: +91 - 91480 78233
-                </p>
-            </div>
+           <Text />
+           <Text />
+           <Text />
+           <Text />
+           <Text />
+           <Text />
         </div>
     )
 }
