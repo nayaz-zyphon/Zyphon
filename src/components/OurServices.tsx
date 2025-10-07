@@ -5,29 +5,78 @@ import iPhone from "../assets/services/iphone.svg"
 import iPad from "../assets/services/ipad.svg"
 import Watch from "../assets/services/watch.svg"
 import MacBook from "../assets/services/macbook.svg"
-import type { JSX } from 'react';
+import { useState, type JSX } from 'react';
+import Model from './Model';
+import ModelForm from './ModelForm';
 
 const OurServices = () => {
+    const [iPhoneModelShow, setiPhoneModelShow] = useState(false);
+    const [iPadModelShow, setiPadModelShow] = useState(false);
+    const [iWatchModelShow, setiWatchModelShow] = useState(false);
+    const [macBookMacModelShow, setmacBookMacModelShow] = useState(false);
+
+
     return (
-        <div
-            id='services'
-            className='xl:py-14 py-10 xl:px-20 sm:px-10 px-5 font-[Urbanist] bg-[#120D0D] text-white w-full sm:rounded-2xl space-y-3 xl:-translate-y-0 lg:-translate-y-6 md:-translate-y-20 -translate-y-6'
-        >
-            <XPaddinText>
-                our services
-            </XPaddinText>
-            <h2 className="font-['Space_Grotesk'] sm:text-5xl text-4xl font-medium bg-gradient-to-r from-[#E60283] via-[#F1D507] to-[#DA4A02] bg-clip-text text-transparent">
-                Got a Device Issue?
-            </h2>
+        <>
+            <div
+                id='services'
+                className='xl:py-14 py-10 xl:px-20 sm:px-10 px-5 font-[Urbanist] bg-[#120D0D] text-white w-full sm:rounded-2xl space-y-3 xl:-translate-y-0 lg:-translate-y-6 md:-translate-y-20 -translate-y-6'
+            >
+                <XPaddinText>
+                    our services
+                </XPaddinText>
+                <h2 className="font-['Space_Grotesk'] sm:text-5xl text-4xl font-medium bg-gradient-to-r from-[#E60283] via-[#F1D507] to-[#DA4A02] bg-clip-text text-transparent">
+                    Got a Device Issue?
+                </h2>
 
-            <p className='sm:text-base text-sm'>Same-day iPhone repair in Bangalore with genuine Apple parts and 12-month warranty. Free pickup and delivery across all areas.</p>
+                <p className='sm:text-base text-sm'>Same-day iPhone repair in Bangalore with genuine Apple parts and 12-month warranty. Free pickup and delivery across all areas.</p>
 
-            <RepairServices />
-        </div>
+                <RepairServices
+                    setiPhoneModelShow={setiPhoneModelShow}
+                    setiPadModelShow={setiPadModelShow}
+                    setiWatchModelShow={setiWatchModelShow}
+                    setmacBookMacModelShow={setmacBookMacModelShow}
+                />
+            </div>
+
+            <Model
+                open={iPhoneModelShow}
+                title={"Book iPhone Repair!"}
+                onClose={() => setiPhoneModelShow(false)}
+            >
+                <ModelForm defaultDeviceBrand="iPhone" formFor="iPhone Repair" />
+            </Model>
+            <Model
+                open={iPadModelShow}
+                title={"Book iPad Repair!"}
+                onClose={() => setiPadModelShow(false)}
+            >
+                <ModelForm defaultDeviceBrand="iPad" formFor="iPad Repair" />
+            </Model>
+            <Model
+                open={iWatchModelShow}
+                title={"Book iWatch Repair!"}
+                onClose={() => setiWatchModelShow(false)}
+            >
+                <ModelForm defaultDeviceBrand="iWatch" formFor="iWatch Repair" />
+            </Model>
+            <Model
+                open={macBookMacModelShow}
+                title={"Book Macbook/Mac Repair!"}
+                onClose={() => setmacBookMacModelShow(false)}
+            >
+                <ModelForm defaultDeviceBrand="MacBook/Mac" formFor="Macbook/Mac Repair" />
+            </Model>
+        </>
     )
 };
 
-const RepairServices = () => {
+const RepairServices = (
+    { setiPhoneModelShow, setiPadModelShow, setiWatchModelShow, setmacBookMacModelShow }:
+        {
+            setiPhoneModelShow: (value: boolean) => void; setiPadModelShow: (value: boolean) => void; setiWatchModelShow: (value: boolean) => void; setmacBookMacModelShow: (value: boolean) => void
+        }) => {
+
     return (
         <div className="xl:flex grid sm:grid-cols-2 grid-cols-1 flex-row gap-4 mt-6">
             {servicesJson.screenReplacement.map((card, index) => {
@@ -52,7 +101,20 @@ const RepairServices = () => {
                                 ))}
                             </div>
 
-                            <div className="font-['Space_Grotesk'] sm:text-sm text-xs bg-gradient-to-r from-[#E60283] via-[#F1D507] to-[#DA4A02] p-[1.5px] w-fit rounded-full mt-auto">
+                            <div
+                                onClick={() => {
+                                    if (title === "iPhone Repair") {
+                                        setiPhoneModelShow(true)
+                                    } else if (title === "iPad Repair") {
+                                        setiPadModelShow(true)
+                                    } else if (title === "Apple Watch Repairs") {
+                                        setiWatchModelShow(true)
+                                    } else {
+                                        setmacBookMacModelShow(true)
+                                    }
+                                }}
+                                className="font-['Space_Grotesk'] sm:text-sm text-xs bg-gradient-to-r from-[#E60283] via-[#F1D507] to-[#DA4A02] p-[1.5px] w-fit rounded-full mt-auto"
+                            >
                                 <button className="group bg-[#1B1B1B] flex items-center gap-2 px-4 py-2 rounded-full cursor-pointer text-white font-medium transition whitespace-nowrap">
                                     Book {title}
                                     <FiArrowUpRight className="sm:text-lg text-sm transform transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

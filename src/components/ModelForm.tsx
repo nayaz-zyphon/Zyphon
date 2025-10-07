@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { DropDown, Input } from './ContactUs';
 
-const QuoteForm = ({ formFor, defaultDeviceBrand }: { formFor: string; defaultDeviceBrand: "iPhone" | "iPad" | "iWatch" | "MacBook/Mac" | "" }) => {
+const ModelForm = ({ formFor, defaultDeviceBrand }: { formFor: string; defaultDeviceBrand: "iPhone" | "iPad" | "iWatch" | "MacBook/Mac" | "" }) => {
     const [fullName, setFullName] = useState("");
     const [email, setEmail] = useState("");
     const [phoneNum, setPhoneNum] = useState("");
@@ -43,7 +43,7 @@ const QuoteForm = ({ formFor, defaultDeviceBrand }: { formFor: string; defaultDe
 
             <div className="flex sm:flex-row flex-col sm:gap-3 gap-1">
                 <DropDown
-                    value={deviceType}
+                    value={defaultDeviceBrand ? defaultDeviceBrand : deviceType}
                     setValue={(value: any) => {
                         setDeviceType(value);
                         setSelectedDeviceBrand(value)
@@ -199,4 +199,4 @@ const QuoteForm = ({ formFor, defaultDeviceBrand }: { formFor: string; defaultDe
     )
 }
 
-export default QuoteForm
+export default ModelForm
