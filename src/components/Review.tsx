@@ -128,7 +128,7 @@ const reviewsList = [
   },
   {
     id: 2,
-    rating: 2,
+    rating: 4,
     reviewText:
       'Maecenas dignissim justo eget nulla rutrum molestie. Maecenas lobortis sem dui, vel rutrum risus tincidunt ullamcorper. Proin eu enim metus. Vivamus sed libero ornare, Curabitur id nibh id sem dignissim finibus ac sit amet magna.',
     reviewer: {
