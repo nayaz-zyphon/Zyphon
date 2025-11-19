@@ -5,7 +5,9 @@ import { GoDotFill } from "react-icons/go"
 const WhyChooseUs = () => {
     return (
         <div className="bg-[#1F1F1F] text-white p-4 sm:rounded-2xl flex md:flex-row flex-col items-center xl:gap-10 gap-6 relative">
-            <div className="lg:w-2/5 md:w-1/2 w-full bg-white rounded-2xl sm:h-[550px] h-[300px]"></div>
+            <div className="lg:w-2/5 md:w-1/2 w-full bg-white rounded-2xl sm:h-[550px] h-[300px]">
+                <img src="/whychooseus.webp" className="object-cover h-full w-full rounded-2xl" />
+            </div>
 
             <div className="lg:w-3/5 md:w-1/2 w-full flex flex-col lg:gap-10 gap-6 justify-center md:py-10 py-6 md:px-0 sm:px-6 px-0 md:max-w-xl mx-auto">
                 <div className="flex flex-col gap-6 items-start">
