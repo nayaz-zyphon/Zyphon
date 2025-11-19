@@ -13,7 +13,7 @@ import NavBar from "@/layout/NavBar"
 
 const Hero = () => {
   return (
-    <>
+    <div className="bg-black">
       <NavBar />
 
       <div className="sm:p-4">
@@ -46,7 +46,7 @@ const Hero = () => {
 
         <Footer />
       </div>
-    </>
+    </div>
   )
 }
 

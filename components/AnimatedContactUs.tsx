@@ -35,7 +35,7 @@ const TextMoving = ({ bgColor, textColor, rotateAngle, translateY, animateClass 
                     Need a Quick Fix? Contact Us
                 </p>
                 <p>
-                    +91 - 91480 78233
+                    +91 - 99015 48555
                 </p>
             </div>
             <div className="flex sm:gap-16 gap-8">
@@ -43,7 +43,7 @@ const TextMoving = ({ bgColor, textColor, rotateAngle, translateY, animateClass 
                     Need a Quick Fix? Contact Us
                 </p>
                 <p>
-                    +91 - 91480 78233
+                    +91 - 99015 48555
                 </p>
             </div>
             <div className="flex sm:gap-16 gap-8">
