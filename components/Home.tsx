@@ -46,7 +46,7 @@ const Home = () => {
                         </XPaddinText>
 
                         <h1 className="font-['Space_Grotesk'] xl:text-7xl lg:text-6xl sm:text-5xl text-4xl font-medium">
-                            Bengaluru’s #1 Apple Device Repair Center
+                            Bengaluru’s #1 Apple On-Site Repair Center
                         </h1>
 
                         <p className="sm:text-base text-sm">

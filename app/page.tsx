@@ -38,7 +38,7 @@ const Hero = () => {
       </div>
 
       <div className="sm:p-4">
-        <About />
+        {/* <About /> */}
 
         <FAQ />
 

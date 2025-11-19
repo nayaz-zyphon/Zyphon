@@ -89,9 +89,9 @@ const Review = () => {
                       <p className="font-medium md:text-lg text-sm text-white">
                         {review.reviewer.name}
                       </p>
-                      <p className="text-xs text-gray-400 break-all">
+                      {/* <p className="text-xs text-gray-400 break-all">
                         {review.reviewer.email}
-                      </p>
+                      </p> */}
                     </div>
                   </div>
 
@@ -122,19 +122,19 @@ const reviewsList = [
     reviewText:
       'Maecenas dignissim justo eget nulla rutrum molestie. Maecenas lobortis sem dui, vel rutrum risus tincidunt ullamcorper. Proin eu enim metus. Vivamus sed libero ornare, Curabitur id nibh id sem dignissim finibus ac sit amet magna.',
     reviewer: {
-      name: 'James Hall',
-      email: 'K.R.Mastrangelo@Outlook.Com',
+      name: 'Lohith J',
+      email: '',
       avatar: "https://images.pexels.com/photos/14653174/pexels-photo-14653174.jpeg",
     },
     verified: true,
   },
   {
     id: 2,
-    rating: 4,
+    rating: 5,
     reviewText:
       'Maecenas dignissim justo eget nulla rutrum molestie. Maecenas lobortis sem dui, vel rutrum risus tincidunt ullamcorper. Proin eu enim metus. Vivamus sed libero ornare, Curabitur id nibh id sem dignissim finibus ac sit amet magna.',
     reviewer: {
-      name: 'James Hall',
+      name: 'Neha Kumari',
       email: 'K.R.Mastrangelo@Outlook.Com',
       avatar: "https://images.pexels.com/photos/14653174/pexels-photo-14653174.jpeg"
     },
@@ -142,11 +142,11 @@ const reviewsList = [
   },
   {
     id: 3,
-    rating: 4,
+    rating: 5,
     reviewText:
       'Excellent service and support! They repaired my MacBook quickly and professionally. Highly recommend Zyphon.',
     reviewer: {
-      name: 'Alice Brown',
+      name: 'Sri Vani',
       email: 'alice.brown@example.com',
       avatar: "https://images.pexels.com/photos/14653174/pexels-photo-14653174.jpeg"
     },
@@ -158,7 +158,7 @@ const reviewsList = [
     reviewText:
       'Quick pickup and fast repair for my iPhone screen. Customer service was top-notch!',
     reviewer: {
-      name: 'Rahul Kumar',
+      name: 'Sunil',
       email: 'rahul.k@example.com',
       avatar: "https://images.pexels.com/photos/14653174/pexels-photo-14653174.jpeg"
     },
@@ -182,7 +182,7 @@ const reviewsList = [
     reviewText:
       'Quick pickup and fast repair for my iPhone screen. Customer service was top-notch!',
     reviewer: {
-      name: 'Rahul Kumar',
+      name: 'Preethy',
       email: 'rahul.k@example.com',
       avatar: "https://images.pexels.com/photos/14653174/pexels-photo-14653174.jpeg"
     },

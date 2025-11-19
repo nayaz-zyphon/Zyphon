@@ -122,15 +122,15 @@ const NavBar = () => {
                     <div className="xl:flex gap-6 hidden">
                         <div className="flex flex-row gap-3">
                             <button className="cursor-pointer hover:bg-white p-3 rounded-full bg-black text-white hover:text-black border border-white transition">
-                                <a href="tel:+919148078233">
+                                <a href="tel:+919901548555">
                                     <IoCallOutline className="text-xl" />
                                 </a>
                             </button>
                             <div className="text-sm flex flex-col gap-0.5 justify-center">
                                 <p className="text-[#D9D9D9]">Ask Questions?</p>
                                 <p className="text-white">
-                                    <a href="tel:+919148078233">
-                                        +91 - 9148078233
+                                    <a href="tel:+919901548555">
+                                        +91 - 9901548555
                                     </a>
                                 </p>
                             </div>

@@ -29,7 +29,7 @@ const ContactUs = () => {
                     </p>
 
                     <div className="grid lg:grid-cols-2 grid-cols-1 lg:gap-8 gap-4 sm:mt-10 mt-6">
-                        <ContactWays heading='Phone' icon={<IoCallOutline className="text-xl" />} value={['+919148078233']} />
+                        <ContactWays heading='Phone' icon={<IoCallOutline className="text-xl" />} value={['+919901548555']} />
                         <ContactWays heading='Email' icon={<HiOutlineMail className="text-xl" />} value={['nayaz@zyphon.in']} />
                         <ContactWays heading='Our Locations' icon={<SlLocationPin className="text-xl" />} value={['                                No. S3 Ground Floor, Madhuban Apartment, Hosur main road, next to IFB point, near Koramangala Forum Mall, Bengaluru - 560030']} />
                         <ContactWays heading='Opening Hours' icon={<LuClock4 className="text-xl" />} value={['Mon-Sat: 9AM-8PM', 'Sunday: 10AM-6PM']} />

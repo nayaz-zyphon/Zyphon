@@ -94,8 +94,8 @@ const Footer = () => {
 
                             <div className='space-y-1 flex-1'>
                                 <p className='underline'>
-                                    <a href="tel:+919148078233">
-                                        +91 9148078233
+                                    <a href="tel:+919901548555">
+                                        +91 9901548555
                                     </a>
                                 </p>
                             </div>

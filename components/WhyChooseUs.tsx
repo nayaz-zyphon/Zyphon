@@ -37,8 +37,8 @@ const WhyChooseUs = () => {
                     <div className="text-sm flex flex-col gap-0.5 justify-center">
                         <p className="text-[#D9D9D9]">Need any help?</p>
                         <p className="text-white">
-                            <a href="tel:+919148078233">
-                                +91 - 9148078233
+                            <a href="tel:+919901548555">
+                                +91 - 9901548555
                             </a>
                         </p>
                     </div>

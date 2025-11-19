@@ -68,7 +68,7 @@ const About = () => {
                 /> */}
             </div>
 
-            <MeetOurTeam />
+            {/* <MeetOurTeam /> */}
 
             <Review />
         </div>
