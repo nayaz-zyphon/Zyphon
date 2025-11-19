@@ -21,6 +21,25 @@ const Review = () => {
   const nextIndex = (activeIndex + 1) % reviewsList.length;
   const visibleCards = [prevIndex, activeIndex, nextIndex];
 
+  const COLORS = [
+    "#FAD4D4", "#FFE7A0", "#C9F4AA", "#AEE2FF",
+    "#D5CCFF", "#FFC6FF", "#F9E2AE", "#B5EAEA"
+  ];
+
+  function getColorByName(name: string) {
+    const index = name.length % COLORS.length;
+    return COLORS[index];
+  }
+
+  function getInitials(name: string) {
+    const parts = name.trim().split(" ");
+    if (parts.length === 1) return parts[0][0].toUpperCase();
+
+    const first = parts[0][0];
+    const last = parts[parts.length - 1][0];
+    return (first + last).toUpperCase();
+  }
+
   return (
     <div
       id="reviews"
@@ -80,18 +99,17 @@ const Review = () => {
 
                 <div className="flex items-center justify-between gap-1">
                   <div className="flex items-center gap-3">
-                    <img
-                      src={review.reviewer.avatar}
-                      alt={review.reviewer.name}
-                      className="w-10 h-10 rounded-full"
-                    />
+                    <div
+                      className="w-10 h-10 rounded-full flex items-center justify-center font-semibold text-black"
+                      style={{ backgroundColor: getColorByName(review.reviewer.name) }}
+                    >
+                      {getInitials(review.reviewer.name)}
+                    </div>
+
                     <div>
                       <p className="font-medium md:text-lg text-sm text-white">
                         {review.reviewer.name}
                       </p>
-                      {/* <p className="text-xs text-gray-400 break-all">
-                        {review.reviewer.email}
-                      </p> */}
                     </div>
                   </div>
 
@@ -120,7 +138,7 @@ const reviewsList = [
     id: 1,
     rating: 5,
     reviewText:
-      'Maecenas dignissim justo eget nulla rutrum molestie. Maecenas lobortis sem dui, vel rutrum risus tincidunt ullamcorper. Proin eu enim metus. Vivamus sed libero ornare, Curabitur id nibh id sem dignissim finibus ac sit amet magna.',
+      "Got my iPhone screen repaired here and the experience was excellent. Quick service, genuine parts, and the phone feels brand new again. Definitely coming back if I need anything fixed.",
     reviewer: {
       name: 'Lohith J',
       email: '',
@@ -132,7 +150,7 @@ const reviewsList = [
     id: 2,
     rating: 5,
     reviewText:
-      'Maecenas dignissim justo eget nulla rutrum molestie. Maecenas lobortis sem dui, vel rutrum risus tincidunt ullamcorper. Proin eu enim metus. Vivamus sed libero ornare, Curabitur id nibh id sem dignissim finibus ac sit amet magna.',
+      "My MacBook had heating issues for months and Apple quoted a huge amount. These guys fixed it in a day at half the price. Super professional and trustworthy repair center.",
     reviewer: {
       name: 'Neha Kumari',
       email: 'K.R.Mastrangelo@Outlook.Com',
@@ -144,7 +162,7 @@ const reviewsList = [
     id: 3,
     rating: 5,
     reviewText:
-      'Excellent service and support! They repaired my MacBook quickly and professionally. Highly recommend Zyphon.',
+      "Amazing service! Took my Apple Watch which wasn’t charging, and they fixed it within a couple of hours. Very transparent and friendly staff. Highly recommend.",
     reviewer: {
       name: 'Sri Vani',
       email: 'alice.brown@example.com',
@@ -156,7 +174,7 @@ const reviewsList = [
     id: 4,
     rating: 5,
     reviewText:
-      'Quick pickup and fast repair for my iPhone screen. Customer service was top-notch!',
+      "Gave my iPhone for battery replacement. The pickup and drop service made it super convenient. Battery backup feels like new now. Excellent job!",
     reviewer: {
       name: 'Sunil',
       email: 'rahul.k@example.com',
@@ -168,7 +186,7 @@ const reviewsList = [
     id: 5,
     rating: 5,
     reviewText:
-      'Quick pickup and fast repair for my iPhone screen. Customer service was top-notch!',
+      "Very satisfied with the repair. My MacBook keyboard was not working, and they repaired it quickly at a reasonable price. Truly reliable service.",
     reviewer: {
       name: 'Rahul Kumar',
       email: 'rahul.k@example.com',
@@ -180,7 +198,7 @@ const reviewsList = [
     id: 6,
     rating: 5,
     reviewText:
-      'Quick pickup and fast repair for my iPhone screen. Customer service was top-notch!',
+      "Fast and professional! I had a cracked Apple Watch screen, and they replaced it perfectly. Looks flawless. Really happy with the service.",
     reviewer: {
       name: 'Preethy',
       email: 'rahul.k@example.com',
@@ -192,7 +210,7 @@ const reviewsList = [
     id: 7,
     rating: 5,
     reviewText:
-      'Quick pickup and fast repair for my iPhone screen. Customer service was top-notch!',
+      "One of the best repair centers I’ve visited. My iPhone wasn’t turning on after a water spill, and they restored it completely. Lifesavers!",
     reviewer: {
       name: 'Rahul Kumar',
       email: 'rahul.k@example.com',
@@ -204,9 +222,9 @@ const reviewsList = [
     id: 8,
     rating: 5,
     reviewText:
-      'Quick pickup and fast repair for my iPhone screen. Customer service was top-notch!',
+      "Excellent customer service. They diagnosed my MacBook issue instantly and fixed it the same day. Highly recommend for any Apple repairs.",
     reviewer: {
-      name: 'Rahul Kumar',
+      name: 'Shweetha',
       email: 'rahul.k@example.com',
       avatar: "https://images.pexels.com/photos/14653174/pexels-photo-14653174.jpeg"
     },
