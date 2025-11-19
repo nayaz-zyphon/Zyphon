@@ -208,7 +208,7 @@ const TextMoving = ({ bgColor, textColor, rotateAngle, translateY, animateClass 
                     Doorstep Service/ Free Pickup and Drop
                 </p>
                 <p>
-                    Call Now: +91 - 91480 78233
+                    Call Now: +91 - 99015 48555
                 </p>
             </div>
         )
