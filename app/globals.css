@@ -135,8 +135,8 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .custom-radio:checked::before {
   content: "";
-  border: 1px solid #EF644C; /* border-primary-blue */
-  background-color: #EF644C; /* bg-primary-blue */
+  border: 1px solid #ef644c; /* border-primary-blue */
+  background-color: #ef644c; /* bg-primary-blue */
   position: absolute;
   width: 0.45rem;
   height: 0.45rem;
@@ -144,17 +144,79 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .my-custome-radio input[type="radio"] {
-  accent-color: #EF644C;
+  accent-color: #ef644c;
 }
 
 .my-radio-btns input {
-  accent-color: #EF644C !important;
+  accent-color: #ef644c !important;
 }
 
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
 .no-scrollbar {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;     /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Add this in globals.css */
+.clip-umrah-shape {
+  clip-path: path(
+    "M176 163.241C192.569 163.241 206 149.81 206 133.241V121C206 104.431 219.431 91 236 91H633C649.569 91 663 104.431 663 121V644C663 660.569 649.569 674 633 674H30C13.4315 674 0 660.569 0 644V193.241C0 176.673 13.4315 163.241 30 163.241H176Z"
+  );
+}
+
+/* lg */
+.video-shape {
+  transform: translate(-0.75rem, -1.5rem); /* lg:-translate-y-6 */
+  height: 480px;
+  border-radius: 60px;
+}
+
+@media (max-width: 1280px) {
+  /* xl */
+  .video-shape {
+    transform: translate(-0.75rem, -3rem);
+    height: 450px;
+  }
+}
+
+@media (max-width: 845px) {
+  .video-shape {
+    transform: translate(-0.75rem, -4rem);
+    height: 430px;
+  }
+}
+
+@media (max-width: 768px) {
+  .video-shape {
+    transform: translate(-0.75rem, -0rem);
+    height: 500px;
+  }
+}
+@media (max-width: 590px) {
+  .video-shape {
+    transform: translate(-0.75rem, -1rem);
+    height: 500px;
+  }
+}
+@media (max-width: 530px) {
+  .video-shape {
+    transform: translate(-0.75rem, -2rem);
+    height: 500px;
+    border-radius: 30px;
+  }
+}
+
+@media (max-width: 530px) {
+  .video-shape {
+    transform: translate(-0.75rem, -4rem);
+    height: 380px;
+  }
+}
+@media (max-width: 350px) {
+  .video-shape {
+    transform: translate(-0.75rem, -5rem);
+    height: 350px;
+  }
 }
